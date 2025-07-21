@@ -25,7 +25,7 @@ async def summarize(ctx, channel: discord.TextChannel = None, last: str = "last"
 
     try:
         messages = []
-        async for message in channel.history(limi=count):
+        async for message in channel.history(limit=count):
             if not message.author.bot:
                 timestamp = message.created_at.strftime("%H:%M")
                 messages.append(f"[{timestamp}] {message.author.display_name}: {message.content}")
